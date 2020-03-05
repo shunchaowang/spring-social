@@ -12,7 +12,8 @@ import org.springframework.stereotype.Component;
 import me.thunder.springsocial.util.CookieUtils;
 
 @Component
-public class HttpCookieOAuth2AuthorizationRequestRepository implements AuthorizationRequestRepository {
+public class HttpCookieOAuth2AuthorizationRequestRepository
+    implements AuthorizationRequestRepository<OAuth2AuthorizationRequest> {
 
   public static final String OAUTH2_AUTHORIZATION_REQUEST_COOKIE_NAME = "oauth2_auth_request";
   public static final String REDIRECT_URI_PARAM_COOKIE_NAME = "redirect_uri";
