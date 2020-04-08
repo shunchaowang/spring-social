@@ -19,14 +19,14 @@ spring:
         registration:
           google:
             clientId: 110362307708-h67rlao2hiih774rg78tkf42vhfvdj8e.apps.googleusercontent.com
-            clientSecret: yJh1C3T9ItTrRzKN46pxC7VH
+            clientSecret: <clientSecret>
             redirectUriTemplate: "{baseUrl}/oauth2/callback/{registrationId}"
             scope:
               - email
               - profile
           facebook:
             clientId: 292021768368553
-            clientSecret: 225f31ae1203a96c198cc605d3ae1937
+            clientSecret: <clientSecret>
             redirectUriTemplate: "{baseUrl}/oauth2/callback/{registrationId}"
             scope:
               - email
