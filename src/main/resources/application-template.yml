@@ -8,7 +8,7 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-      naming-stratedy: org.hibernate.cfg.ImprovedNamingStrategy
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
@@ -19,14 +19,14 @@ spring:
         registration:
           google:
             clientId: 110362307708-h67rlao2hiih774rg78tkf42vhfvdj8e.apps.googleusercontent.com
-            clientSecret: <clientSecret>
+            clientSecret: yJh1C3T9ItTrRzKN46pxC7VH
             redirectUriTemplate: "{baseUrl}/oauth2/callback/{registrationId}"
             scope:
               - email
               - profile
           facebook:
             clientId: 292021768368553
-            clientSecret: <clientSecret>
+            clientSecret: 225f31ae1203a96c198cc605d3ae1937
             redirectUriTemplate: "{baseUrl}/oauth2/callback/{registrationId}"
             scope:
               - email
