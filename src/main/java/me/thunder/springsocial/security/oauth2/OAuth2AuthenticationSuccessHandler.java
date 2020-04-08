@@ -37,7 +37,7 @@ public class OAuth2AuthenticationSuccessHandler extends SimpleUrlAuthenticationS
   public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
       Authentication authentication) throws IOException, ServletException {
 
-        String targetUrl = 
+    String targetUrl;
   }
 
   protected String determineTargetUrl(HttpServletRequest request, HttpServletResponse response,
