@@ -40,7 +40,14 @@ public class OAuth2AuthenticationSuccessHandler extends SimpleUrlAuthenticationS
   public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
       Authentication authentication) throws IOException, ServletException {
 
-    String targetUrl;
+    String targetUrl = determineTargetUrl(request, response, authentication);
+    if (response.isCommitted()) {
+      logger.debug("Response has already been committed. Unable to redirect to " + targetUrl);
+      return;
+    }
+
+    clearAuthenticationAttributes(request, response);
+    getRedirectStrategy().sendRedirect(request, response, targetUrl);
   }
 
   protected String determineTargetUrl(HttpServletRequest request, HttpServletResponse response,
@@ -55,6 +62,11 @@ public class OAuth2AuthenticationSuccessHandler extends SimpleUrlAuthenticationS
     String token = tokenProvider.createToken(authentication);
 
     return UriComponentsBuilder.fromUriString(targetUrl).queryParam("token", token).build().toUriString();
+  }
+
+  protected void clearAuthenticationAttributes(HttpServletRequest request, HttpServletResponse response) {
+    super.clearAuthenticationAttributes(request);
+    httpCookieOAuth2AuthorizationRequestRepository.removeAuthorizationRequest(request, response);
   }
 
   private boolean isAuthorizedRedirectUri(String uri) {
