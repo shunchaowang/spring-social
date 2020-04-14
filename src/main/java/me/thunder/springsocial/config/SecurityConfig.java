@@ -39,8 +39,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   @Autowired
   private OAuth2AuthenticationFailureHandler oAuth2AuthenticationFaulureHandler;
 
-  @Autowired
-  private HttpCookieOAuth2AuthorizationRequestRepository httpCookieOAuth2AuthorizationRequestRepository;
+  // @Autowired
+  // private HttpCookieOAuth2AuthorizationRequestRepository
+  // httpCookieOAuth2AuthorizationRequestRepository;
 
   @Bean
   public TokenAuthenticationFilter tokenAuthenticationFilter() {
