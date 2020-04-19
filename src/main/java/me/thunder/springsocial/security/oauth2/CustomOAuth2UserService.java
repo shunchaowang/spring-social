@@ -20,6 +20,14 @@ import me.thunder.springsocial.security.UserPrincipal;
 import me.thunder.springsocial.security.oauth2.user.OAuth2UserInfo;
 import me.thunder.springsocial.security.oauth2.user.OAuth2UserInfoFactory;
 
+/**
+ * The CustomOAuth2UserService extends Spring Security’s
+ * DefaultOAuth2UserService and implements its loadUser() method. This method is
+ * called after an access token is obtained from the OAuth2 provider. In this
+ * method, we first fetch the user’s details from the OAuth2 provider. If a user
+ * with the same email already exists in our database then we update his
+ * details, otherwise, we register a new user.
+ */
 @Service
 public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 

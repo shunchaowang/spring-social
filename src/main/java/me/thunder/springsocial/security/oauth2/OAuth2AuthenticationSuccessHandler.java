@@ -22,6 +22,15 @@ import me.thunder.springsocial.util.CookieUtils;
 
 import static me.thunder.springsocial.security.oauth2.HttpCookieOAuth2AuthorizationRequestRepository.REDIRECT_URI_PARAM_COOKIE_NAME;
 
+/**
+ * On successful authentication, Spring security invokes the
+ * onAuthenticationSuccess() method of the OAuth2AuthenticationSuccessHandler
+ * configured in SecurityConfig.
+ * 
+ * In this method, we perform some validations, create a JWT authentication
+ * token, and redirect the user to the redirect_uri specified by the client with
+ * the JWT token added in the query string.
+ */
 @Component
 public class OAuth2AuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
   private final TokenProvider tokenProvider;

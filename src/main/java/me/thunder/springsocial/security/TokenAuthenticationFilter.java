@@ -17,6 +17,10 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+/**
+ * This class is used to read JWT authentication token from the request, verify
+ * it, and set Spring Security’s SecurityContext if the token is valid.
+ */
 public class TokenAuthenticationFilter extends OncePerRequestFilter {
 
   @Autowired

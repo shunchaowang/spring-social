@@ -16,6 +16,9 @@ import io.jsonwebtoken.SignatureException;
 import io.jsonwebtoken.UnsupportedJwtException;
 import me.thunder.springsocial.config.AppProperties;
 
+/**
+ * This class contains code to generate and verify Json Web Tokens.
+ */
 @Service
 public class TokenProvider {
 

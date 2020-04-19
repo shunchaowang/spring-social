@@ -17,6 +17,14 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import me.thunder.springsocial.util.CookieUtils;
 
+/**
+ * In case of any error during OAuth2 authentication, Spring Security invokes
+ * the onAuthenticationFailure() method of the
+ * OAuth2AuthenticationFailureHandler that we have configured in SecurityConfig.
+ * 
+ * It sends the user to the frontend client with an error message added to the
+ * query string.
+ */
 @Component
 public class OAuth2AuthenticationFailureHandler extends SimpleUrlAuthenticationFailureHandler {
 

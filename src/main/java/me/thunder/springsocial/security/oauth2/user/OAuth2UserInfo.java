@@ -2,6 +2,14 @@ package me.thunder.springsocial.security.oauth2.user;
 
 import java.util.Map;
 
+/**
+ * Every OAuth2 provider returns a different JSON response when we fetch the
+ * authenticated user’s details. Spring security parses the response in the form
+ * of a generic map of key-value pairs.
+ * 
+ * The following classes are used to get the required details of the user from
+ * the generic map of key-value pairs.
+ */
 public abstract class OAuth2UserInfo {
   protected Map<String, Object> attributes;
 

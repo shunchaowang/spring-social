@@ -23,6 +23,11 @@ import me.thunder.springsocial.security.oauth2.HttpCookieOAuth2AuthorizationRequ
 import me.thunder.springsocial.security.oauth2.OAuth2AuthenticationFailureHandler;
 import me.thunder.springsocial.security.oauth2.OAuth2AuthenticationSuccessHandler;
 
+/**
+ * The following SecurityConfig class is the crux of our security
+ * implementation. It contains configurations for both OAuth2 social login as
+ * well as email and password based login.
+ */
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true, jsr250Enabled = true, prePostEnabled = true)
