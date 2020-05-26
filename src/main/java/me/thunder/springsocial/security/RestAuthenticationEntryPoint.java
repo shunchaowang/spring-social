@@ -6,16 +6,26 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 
+/**
+ * This class is invoked when a user tries to access a protected resource
+ * without authentication. In this case, we simply return a 401 Unauthorized
+ * response.
+ */
 public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {
+
+  private static final Logger logger = LoggerFactory.getLogger(RestAuthenticationEntryPoint.class);
 
   @Override
   public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception)
       throws IOException, ServletException {
-    // TODO Auto-generated method stub
 
+    logger.error("Responding with unauthorized error. Message - {}", exception.getMessage());
+    response.sendError(HttpServletResponse.SC_UNAUTHORIZED, exception.getLocalizedMessage());
   }
 
 }

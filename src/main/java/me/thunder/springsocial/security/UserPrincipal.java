@@ -12,6 +12,10 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import me.thunder.springsocial.model.User;
 
+/**
+ * The UserPrincipal class represents an authenticated Spring Security
+ * principal. It contains the details of the authenticated user.
+ */
 public class UserPrincipal implements OAuth2User, UserDetails {
 
   /**
@@ -67,7 +71,7 @@ public class UserPrincipal implements OAuth2User, UserDetails {
 
   @Override
   public String getName() {
-    return null;
+    return String.valueOf(id);
   }
 
   @Override
