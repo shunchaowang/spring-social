@@ -1,7 +1,7 @@
 package me.thunder.springsocial.util;
 
 import java.util.Optional;
-import java.util.Base64;;
+import java.util.Base64;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
